@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CreateTask.css'; // Import the CSS file for styling
 
 const CreateTask = ({ onClose, onSave }) => {
   const [taskName, setTaskName] = useState('');
@@ -15,8 +16,12 @@ const CreateTask = ({ onClose, onSave }) => {
   };
 
   return (
-    <div className="modal-container">
-      <h2>Create Task</h2>
+    <div className="modal-container slide-down">
+      <div className="modal-header">
+        <h2>Create Task</h2>
+        <button className="close" onClick={onClose}>&times;</button>
+      </div>
+      <hr />
       <input
         type="text"
         name="createTaskName"
